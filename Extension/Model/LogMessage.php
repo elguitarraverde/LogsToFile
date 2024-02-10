@@ -10,7 +10,7 @@ class LogMessage
     public function testBefore(): Closure
     {
         return function () {
-            if ($this->channel === 'master' && $this->level === 'error') {
+            if (in_array($this->level, ['error', 'critical'])) {
 
                 $logs = [];
 
