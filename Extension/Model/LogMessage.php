@@ -44,7 +44,7 @@ class LogMessage
                 }
 
                 array_push($logs, $this);
-                $data = json_encode($logs);
+                $data = json_encode($logs, JSON_PRETTY_PRINT);
 
                 file_put_contents($pathLogFile, $data);
 
